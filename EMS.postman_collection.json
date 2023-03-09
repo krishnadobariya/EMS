@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "f4d49e71-b485-4f09-9dc2-137ddb3bddd1",
+		"name": "EMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15906381"
+	},
+	"item": [
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "Event Create",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjc4MjgzNTE2LCJleHAiOjE2NzgyODcxMTZ9.4QCMeV4vG9CbSifvpN4nUaa0S8f4JCykSPgbhheJbKE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"eventStartTime\": \"03-02-2022\",\n    \"eventEndTime\":\"04-02-2022\",\n    \"invitedUser\":\"1, 2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/event/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"event",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Event List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjc4Mjk0ODIzLCJleHAiOjE2NzgyOTg0MjN9.X3LA38JEiwvC4mUHATc1ARkfZ36DaFD4g-deM9t6U64",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8000/event/list?pageSize=2&pageNumber=1&searchString=di&date=2022-03-03",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"event",
+								"list"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "2"
+								},
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "searchString",
+									"value": "di"
+								},
+								{
+									"key": "date",
+									"value": "2022-03-03"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Event List Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjc4MzM1NzE1LCJleHAiOjE2NzgzMzkzMTV9.2bUCsATxGZYRVcMYJt-mn4zH_O0OgFR9lPAKRQFiVi0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/event/list-get-by-id/10",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"event",
+								"list-get-by-id",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Event Update",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"krishna\",\n    \"age\":\"21\",\n    \"mobno\":\"9876543021\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"kri@gmail.com\",\n    \"password\":\"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/user/logout/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"logout",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User ResetPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/user/reset-password/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"reset-password",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User UpdatePassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newPassword\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/update-password/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"update-password",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User ChangePassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oldPassword\":\"1234\",\n    \"newPassword\":\"1235\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/change-password/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"change-password",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
